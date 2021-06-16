@@ -20,3 +20,9 @@ mkdir -pv $LFS/{sources,tools,boot,etc,bin,lib,sbin,usr,var}
 case $(uname -m) in
     x86_64) mkdir -pv $LFS/lib64;;
 esac
+
+cp -rf *.sh packages.csv "$LFS/sources"
+cd "$LFS/sources"
+export PATH="$LFS/tools/bin:$PATH"
+
+source download.sh
