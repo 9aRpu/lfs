@@ -10,10 +10,10 @@ cat packages.csv | while read line; do
     if [ ! -f "$CACHEFILE" ]; then  
         echo "Downloading $URL"
         wget "$URL"
-        if ! echo "$MD5SUM $CACHEFILE" | md5sum -c >/dev/null; then
-            rm -f "$CACHEFILE"
-            echo "Verification of $CACHEFILE failed! MD5 mismatch"
-            exit 1
-        fi
+        # if ! echo "$MD5SUM $CACHEFILE" | md5sum -c >/dev/null; then
+        #     rm -f "$CACHEFILE"
+        #     echo "Verification of $CACHEFILE failed! MD5 mismatch"
+        #     exit 1
+        # fi
     fi
 done
